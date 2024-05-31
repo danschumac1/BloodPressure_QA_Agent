@@ -1,0 +1,9 @@
+PatientID,MedInterval,OrderStartDate,Description,Amount,Units,DosageForm,ProviderInstructions
+p1,Once 1700,12/4/2023 23:00,MORPHINE 4 MG/ML INJECTION SYRINGE WRAPPER,4,mg,IV,"StatIf both oral and IV options are ordered for same pain level, administer IV if patient not able to take oral medications."
+p1,Once 1700,12/4/2023 23:00,LABETALOL 20 MG/4 ML (5 MG/ML) INTRAVENOUS SYRINGE,10,mg,IV,Administer if Systolic BP GREATER than 160
+p1,Once 1745,12/4/2023 23:45,"POTASSIUM CHLORIDE ER 20 MEQ TABLET,EXTENDED RELEASE(PART/CRYST)",40,mEq,oral,"Do not crush, split, or chew."
+p2,Once 1000,11/29/2023 16:00,"HEPARIN (PORCINE) 1,000 UNIT/ML INJECTION SOLUTION FOR PORT PACKING",5000,Units,cath,Per Treatment. Pack Port 1; For Dialysis
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
