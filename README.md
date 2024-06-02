@@ -13,6 +13,11 @@ This repository contains a Dockerized application for analyzing patient blood pr
 
 To use this application, follow these steps:
 
-1. **Pull the Docker Image**:
+1. Go to https://hub.docker.com/r/danschumac1/blood-pressure-qa-app
+2. **Pull the Docker Image**:
    ```bash
    docker pull danschumac1/blood-pressure-qa-app:latest
+3. **Run**:
+   ```bash
+   docker run -it danschumac1/blood-pressure-qa-app:latest
+4. **When prompted for a patient name enter p1 or p2**:
