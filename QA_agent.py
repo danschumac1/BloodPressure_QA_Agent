@@ -124,7 +124,7 @@ def main():
         if blood_pressure_status != 'normal':
 
             response = client.chat.completions.create(
-                model="gpt-3.5-turbo-0125", # keep it cheap until it is working
+                model="gpt-4-1106-preview", # or gpt-3.5-turbo-0125 for cheap alternitive
                 messages=[
 
                 # HIGH LEVEL WHAT WILL THE MODEL BE DOING
