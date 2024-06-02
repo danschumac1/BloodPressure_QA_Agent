@@ -7,7 +7,7 @@ This repository contains a Dockerized application for analyzing patient blood pr
 - Analyzes blood pressure data from patient records.
 - Determines if a patient has hypertension or hypotension.
 - Identifies treatments for the diagnosed conditions using medication data.
-- Utilizes OpenAI's GPT-3.5-turbo model to generate treatment summaries.
+- Utilizes OpenAI's gpt-4-1106-preview to generate treatment summaries.
 
 ## Usage
 
