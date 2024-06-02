@@ -137,6 +137,7 @@ def main():
                 },
 
                 # EXAMPLE WHERE PATIENT HAS RECEIVED TREATMENT
+                # These were generated with ChatGPT 4o and reviced by a infectious disease doctor (friend of mine) 
                 {
                 "role": "user",
                 "content": f"""
@@ -146,11 +147,12 @@ def main():
         DESCRIPTION: metoprolol tartrate 25 mg tablet || PROVIDER INSTRUCTIONS: administer orally twice daily. Monitor heart rate and blood pressure regularly.
         DESCRIPTION: insulin glargine 100 units/ml injection pen || PROVIDER INSTRUCTIONS: inject subcutaneously once daily at the same time each day. Adjust dose based on blood glucose levels. 
         DESCRIPTION: furosemide 40 mg tablet || PROVIDER INSTRUCTIONS: administer orally once daily in the morning. Monitor for signs of dehydration and electrolyte imbalance.
-        TREATMENT: The patient has received treatment for their hypertension with metoprolol tartrate 25 mg tablet, which is to be administered orally twice daily, with regular monitoring of heart rate and blood pressure.[\STOP]
+        TREATMENT: The patient has received treatment for their hypertension with metoprolol tartrate 25 mg tablet, which is to be administered orally twice daily, with regular monitoring of heart rate and blood pressure. Additionally, furosemide although a diarrhetic, will have an effect of lowering blood pressure. It is not listed as an antihypertensive, but it will have that effect.[END]
         """
                 },
 
                 # EXAMPLE WHERE THE PATIENT HAS NOT RECEIVED TREATMENT
+                # These were generated with ChatGPT 4o and reviced by a infectious disease doctor (friend of mine) 
                 {
                 "role": "user",
                 "content": f"""
@@ -160,7 +162,16 @@ def main():
         DESCRIPTION: amoxicillin 500 mg capsule || PROVIDER INSTRUCTIONS: administer orally every 8 hours. Complete the full course of the antibiotic even if symptoms improve. 
         DESCRIPTION: ondansetron 4 mg oral disintegrating tablet || PROVIDER INSTRUCTIONS: place on the tongue to dissolve; do not swallow whole. Administer 30 minutes before chemotherapy to prevent nausea and vomiting. 
         DESCRIPTION: lorazepam 1 mg tablet || PROVIDER INSTRUCTIONS: administer orally as needed for anxiety, not to exceed 3 doses per day. Monitor for signs of drowsiness or sedation. 
-        TREATMENT: The patient has not received treatment specifically for hypotension. The medications listed in the medical records are for other conditions such as infection, nausea/vomiting prevention, and anxiety.[\STOP]
+        TREATMENT: The patient has not received treatment specifically for hypotension. The medications listed in the medical records are for other conditions such as infection, nausea/vomiting prevention, and anxiety. Two of the medications (amoxicillin and ondansetron) do not treat hypotension, but might treat the cuases of hypotension.[END]
+        """
+                },
+                {
+                "role": "user",
+                "content": f"""
+        PATIENT NAME: p5
+        BLOOD PRESSURE STATUS: Hypotension
+        MEDICAL RECORDS:
+        TREATMENT: The patient has not received any treatment specifically for hypotension. In fact they have no entries on the medication database whatsoever.[END]
         """
                 },
 
@@ -181,8 +192,8 @@ def main():
             temperature=0.0,
 
             # DON'T WANT RESPONSE BEING TOO WORDY
-            max_tokens=64,
-            stop=["[\STOP]"]
+            max_tokens=256,
+            stop=["[END]"], 
             )
 
             print(json.dumps({
@@ -216,5 +227,4 @@ if __name__ == "__main__":
 # =============================================================================
 # FUTURE WORK
 # =============================================================================
-# Set up .gitignore and .dockerignore (Don't want openAPI key or password available)
-# Add an example of a patient who has blood pressure disorder but NO med records.
+# Set up and .dockerignore (Don't want openAPI key or password available)
